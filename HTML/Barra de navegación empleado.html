@@ -1,0 +1,124 @@
+
+<html >
+<head>
+
+
+  <style>
+    body {
+      margin: 0;
+    background-color: #A550BB;
+    }
+    /* Barra superior */
+    .barra {
+      display: flex; 
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      height: 60px;
+	  width:100%;
+	  	  border: 1px solid black;
+    }
+	
+    /* Lado izquierdo */
+    .ladoizquierdo {
+      display: flex;
+      align-items: center;
+      color: black;
+	  
+    }
+	
+		.username {
+      font-weight: bold;
+	  margin-top: 10px;
+	  margin: 30px;
+	 
+    }
+	
+	
+    .botones {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+	  margin: 10px;
+	  background-color: #A550BB;
+	
+    }
+	
+    .foto {
+      width: 50px;
+      height: 50px;
+      background-color: silver;
+	  display: flex;
+         align-items: center;
+		 justify-content: center;
+    }
+
+	
+    .botones:hover {
+      background-color: #6A0DAD;
+  
+    }
+    
+
+	    .barra2{
+      display: flex; 
+        flex-direction: column;
+      background-color: white;
+      height: 100%;
+	  width:210px;
+	  	align-items: center;
+
+    }
+	
+	    
+    .ladoizquierdo2 {
+      display: flex;
+    flex-direction: column;
+      color: black;
+		align-items: center;
+    }
+	
+	 .horas{
+      display: flex;
+   height:90px;
+	  margin: 10px;
+	align-items: center;
+	
+    }
+	
+	   /* nombre con raya  */
+.username h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+	
+  </style>
+</head>
+<body>
+  <div class="barra">
+    <!-- Logo -->
+    <div class="ladoizquierdo">
+      <div class="username"><h1>Empleado<h1></div>  
+      <div class="botones">Registro de horas</div>
+	    <div class="botones">Vacaciones</div>
+    </div>
+
+    <!-- Botones -->
+    <div class="ladoizquierdo">
+      <div class="username"><h3>Fernando Lopez<h3></div>
+       <div class="foto"><h1>👤<h1></div>  
+		  <div class="botones">Cerrar Sesion</div>
+    </div>
+  </div>
+  
+  <div class="barra2">   
+   <div class="ladoizquierdo2">
+       <div class="horas"></div>
+    <div class="horas"><h2>Horas Trabajadas<h2></div>
+	  <div class="horas"><h2>12.5<h2></div>
+    </div>
+  </div>
+ 
+</body>
+</html>

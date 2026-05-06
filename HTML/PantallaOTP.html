@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+      <title>Verificación de código</title>
+      <style>
+            body {
+                  font-family: Arial, Mon;
+                  background-color: #a550bb;
+                  /* Fondo morado */
+                  color: white;
+                  text-align: center;
+                  padding: 50px;
+            }
+
+            .contenedor {
+                  background: #fff;
+                  color: #000;
+                  padding: 20px;
+                  border-radius: 10px;
+                  display: inline-block;
+            }
+
+            .codigo input {
+                  width: 40px;
+                  height: 40px;
+                  text-align: center;
+                  font-size: 20px;
+                  margin: 5px;
+            }
+
+            button {
+                  background-color: green;
+                  color: white;
+                  padding: 10px 20px;
+                  border: none;
+                  border-radius: 5px;
+                  margin-top: 15px;
+                  cursor: pointer;
+            }
+
+            button:disabled {
+                  background-color: gray;
+                  cursor: not-allowed;
+            }
+      </style>
+
+</head>
+
+<body>
+      <div class="contenedor">
+            <h2>Verificación de código</h2>
+            <p>Por favor, ingresa el código de seguridad de 6 dígitos que enviamos a tu correo electrónico:</p>
+
+            <!-- Campos para los 6 dígitos -->
+            <div class="codigo">
+                  <input type="text" maxlength="1">
+                  <input type="text" maxlength="1">
+                  <input type="text" maxlength="1">
+                  <input type="text" maxlength="1">
+                  <input type="text" maxlength="1">
+                  <input type="text" maxlength="1">
+            </div>
+
+            <!-- Botón de verificación -->
+            <button id="btnVerificar" disabled>Verificar</button>
+
+            <p>¿No recibiste el código? Revisa tu carpeta de spam.</p>
+      </div>
+
+      <!-- Conectamos el JavaScript -->
+      <script>
+            // Seleccionamos todos los cuadros de código
+            const inputs = document.querySelectorAll('.codigo input');
+            const boton = document.getElementById('btnVerificar');
+
+            // Auto-enfoque en el primer cuadro
+            inputs[0].focus();
+
+            // Escuchar cada cuadro
+            inputs.forEach((input, index) => {
+                  input.addEventListener('input', () => {
+                        // Si el usuario escribe algo, pasa al siguiente cuadro
+                        if (input.value && index < inputs.length - 1) { inputs[index + 1].focus(); }
+                        // Verificar si todos los      cuadros están llenos 
+                        let codigoCompleto = true; inputs.forEach(i => {
+                              if (i.value === '') codigoCompleto = false;
+                        });
+
+                        // Habilitar el botón si el código está completo
+                        boton.disabled = !codigoCompleto;
+                  });
+            });
+
+      </script>
+</body>
+
+</html>
