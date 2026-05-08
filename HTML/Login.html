@@ -2,178 +2,41 @@
 <html lang="es">
 
 <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Iniciar Sesión</title>
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
-            rel="stylesheet" />
-
-      <style>
-            * {
-                  margin: 0;
-                  padding: 0;
-                  box-sizing: border-box;
-                  font-family: 'DM Sans', sans-serif;
-            }
-            body {
-                  font-family: 'DM Sans', sans-serif;
-                  background-color: #A550BB;
-                  min-height: 100vh;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-            }
-
-            .contenedor {
-                  background-color: #ffffff;
-                  width: 380px;
-                  padding: 2rem;
-                  box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
-            }
-
-            h1 {
-                  text-align: center;
-                  font-size: 24px;
-                  margin-bottom: 5px;
-                  color: #1a1a2e;
-            }
-
-            .grupo {
-                  margin-bottom: 18px;
-            }
-
-            label {
-                  display: block;
-                  font-size: 14px;
-                  margin-bottom: 7px;
-                  color: #1a1a2e;
-            }
-
-            .campo {
-                  position: relative;
-            }
-
-            input {
-                  width: 100%;
-                  padding: 12px;
-                  border: 1.5px solid #d0d0dc;
-                  background-color: #f7f7fb;
-                  font-size: 14px;
-                  outline: none;
-            }
-
-            input:focus {
-                  border-color: #d32f2f !important;
-                  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.15);
-            }
-
-            .btn-ver {
-                  position: absolute;
-                  right: 10px;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  border: none;
-                  background: none;
-                  cursor: pointer;
-            }
-
-            .btn-ver:hover {
-                  background-color: #dbdbdb;
-            }
-
-            .contRecuperacion {
-                  text-align: right;
-                  margin-bottom: 20px;
-            }
-
-            .link {
-                  color: #A550BB;
-                  font-size: 14px;
-                  text-decoration: none;
-            }
-
-            .btn-login {
-                  width: 100%;
-                  padding: 12px;
-                  background-color: #A550BB;
-                  color: white;
-                  border: none;
-                  font-size: 15px;
-                  font-weight: 600;
-                  cursor: pointer;
-            }
-
-            .btn-login:hover {
-                  background-color: #5b136d
-            }
-      </style>
+      <script src="../JS/utilidad.js"></script>
+      <link rel="stylesheet" href="../CSS/login.css">
 </head>
 
 <body>
 
-      <form onsubmit="return validar()" action="Barra de navegación empleado.html">
-            <div class="contenedor">
-                  <h1>Iniciar sesión</h1>
+      <div class="contenedor">
+            <h1>Iniciar sesión</h1>
 
-                  <div class="grupo">
-                        <label>Número de empleado o correo electrónico</label>
+            <div class="grupo">
+                  <label>Número de empleado o correo electrónico</label>
 
-                        <div class="campo">
-                              <input id="empleado" type="text">
-                        </div>
-
+                  <div class="campo">
+                        <input id="empleado" type="text">
                   </div>
 
-                  <div class="grupo">
-                        <label>Contraseña</label>
-
-                        <div class="campo">
-                              <input id="password" type="password" placeholder="••••••••" >
-                              <button type="button" class="btn-ver" onclick="verContrasena()">👁</button>
-                        </div>
-                  </div>
-
-                  <div class="contRecuperacion">
-                        <a href="PantallaOTP.html" class="link" onclick="return validarCampoE()">¿Olvidaste tu contraseña?</a>
-                  </div>
-
-                  <button type="submit" class="btn-login">Iniciar sesión</button>
             </div>
 
-      </form>
+            <div class="grupo">
+                  <label>Contraseña</label>
 
-      <script>
-            function verContrasena() {
-                  const pass = document.getElementById("password");
-                  if (pass.type === "password") {
-                        pass.type = "text";
-                  } else {
-                        pass.type = "password"; 
-                  }
-            }
-            function validar() {
-                  const pass = document.getElementById("password").value.trim();
+                  <div class="campo">
+                        <input id="password" autocomplete="new-password" type="password" placeholder="••••••••">
+                        <button type="button" class="btn-ver" onclick="verContrasena(document.getElementById('password'))">👁</button>
+                  </div>
+            </div>
 
-                  if (validarCampoE || pass === '') {
-                        alert("Todos los campos son obligatorios");
-                        return false;
-                  }
+            <div class="contRecuperacion">
+                  <a href="PantallaOTP.html" class="link" onclick="return validarCampo(document.getElementById('empleado'))">¿Olvidaste tu contraseña?</a>
+            </div>
 
-                  return true
-            }
-            function validarCampoE(){
-                  const emplea = document.getElementById("empleado").value.trim();
-                  if (emplea === '') {
-                        alert("Campo empleado necesario")
-                        return false;
-                  }
-                  return true
-            }
-
-      </script>
+            <button type="submit" class="btn-login" onclick="return validarCampo(document.getElementById('empleado')) && validarCampo(document.getElementById('password'));">Iniciar sesión</button>
+      </div>
 
 </body>
-
-
 
 </html>

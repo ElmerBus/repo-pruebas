@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Alta Empresa</title>
+      <link rel="stylesheet" href="../CSS/estiloBarra.css">
+      <link rel="stylesheet" href="../CSS/altaempresa.css">
+</head>
+
+<body>
+      <div class="barra">
+            <!-- Logo -->
+            <div class="ladoizquierdo">
+                  <div class="username">
+                        <h1>Empleado<h1>
+                  </div>
+                  <div class="grupo">
+                        <div class="botones">Registro de horas</div>
+                        <div class="botones">Vacaciones</div>
+                  </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="ladoizquierdo">
+                  <div class="username">
+                        <h3>Fernando Lopasdasdasdeaz<h3>
+                  </div>
+                  <div class="foto">
+                        <h1>👤<h1>
+                  </div>
+                  <div class="botones">Cerrar Sesion</div>
+            </div>
+      </div>
+            <div id="alta_empresas">
+                  <h3>Nueva Empresa</h3>
+                  <input type="text" id="agregar" oninput="validarInput()" />
+                  <p id="error_agregar" style="color: red; font-size: 12px; display: none"></p>
+
+                  <button id="btn_guardar" onclick="agregar()" disabled>
+                        Guardar Empresa
+                  </button>
+            </div>
+            <div id="div_tabla_empresas">
+                  <div class="fila">
+                        <h3>Empresas Registradas</h3>
+                        <input type="text" id="buscar_empresa" placeholder="Buscar por nombre..." oninput="filtrar()" />
+                        <input type="text" id="buscar_id" placeholder="Buscar por id..." oninput="filtrar()" />
+
+                        <select id="estado" onchange="filtrar()">
+                              <option value="">Todas</option>
+                              <option value="activa">Activas</option>
+                              <option value="pausada">Pausadas</option>
+                        </select>
+                  </div>
+                  <table id="tabla_empresas">
+                        <thead>
+                              <tr>
+                                    <th>ID</th>
+                                    <th>Nombre Empresa</th>
+                                    <th>Código Cobrable</th>
+                                    <th>Código No Cobrable</th>
+                                    <th>Estado</th>
+                                    <th>Acción</th>
+                              </tr>
+                        </thead>
+
+                        <tbody id="contenido_tabla">
+                              <tr id="mensaje">
+                                    <td colspan="6">
+                                          🔍 Usa los filtros para motrarte empresas de tu preferencia
+                                    </td>
+                              </tr>
+                              <tr id="mensaje">
+                                    <td colspan="6">
+                                          🔍 Usa los filtros para motrarte empresas de tu preferencia
+                                    </td>
+                              </tr>
+                        </tbody>
+                  </table>
+            </div>
+
+      <script>
+            function validarInput() {
+                  const input = document.getElementById("agregar");
+                  const boton = document.getElementById("btn_guardar");
+                  const error = document.getElementById("error_agregar");
+
+                  if (input.value.trim() === "") {
+                        boton.disabled = true;
+                        error.style.display = "block";
+                        error.textContent = "El nombre de la empresa es obligatorio";
+                  } else {
+                        boton.disabled = false;
+                        error.style.display = "none";
+                  }
+            }
+
+            function agregar() {
+                  // codigo a la espera de api
+            }
+            function filtrar() {
+                  // a la espera de api  código
+            }
+      </script>
+</body>
+
+</html>

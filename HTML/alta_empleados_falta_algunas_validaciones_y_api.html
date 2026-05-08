@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Alta Usuarios</title>
+      <link rel="stylesheet" href="../CSS/estiloBarra.css"">
+      <style>
+            .mensajes {
+                  text-align: center;
+                  padding: 140px;
+                  font-size: 18px;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+            }
+
+            th,
+            td {
+                  border: 1px solid black;
+                  padding: 10px;
+            }
+
+            * {
+                  box-sizing: border-box;
+            }
+
+            body {
+                  background-color: #a550bb;
+            }
+
+            #principal_columna {
+                  width: 100%;
+                  
+                  padding: 10px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: flex-start;
+                  align-items: flex-start;
+                  gap: 10px;
+                  background-color: white;
+                  
+                  margin-top: 60px;
+                  box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+            }
+
+            .columna {
+                  flex: 1;
+                  min-width: 220px;
+
+                  background-color: white;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+            }
+
+            .fila {
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: wrap;
+                  gap: 10px;
+                  width: 100%;
+                  background-color: white;
+            }
+      </style>
+</head>
+
+<body>
+
+      <div class=" barra">
+      <!-- Logo -->
+      <div class="ladoizquierdo">
+            <div class="username">
+                  <h1>Administrador<h1>
+            </div>
+            <div class="grupo">
+                  <div class="botones">Usuarios</div>
+                  <div class="botones">Empresas</div>
+            </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="ladoizquierdo">
+            <div class="username">
+                  <h3>Fernando Lopasdasdasdeaz<h3>
+            </div>
+            <div class="foto">
+                  <h1>👤<h1>
+            </div>
+            <div class="botones">Cerrar Sesion</div>
+      </div>
+      </div>
+      <br>
+      <div id="principal_columna">
+            <div class="fila">
+                  <div class="fila">
+                        <h3>Registrar</h3>
+                  </div>
+                  <form>
+                        <div class="fila">
+                              <div class="columna">
+                                    <label for="nombre"> Nombre completo </label>
+
+                                    <input type="text" required id="nombre" placeholder="Ej. Eduardo Tapia Silva" />
+                              </div>
+                              <div class="columna">
+                                    <label for="correo">Correo electronico</label>
+
+                                    <input type="email" id="correo" required placeholder="correo@empresa.com" />
+                              </div>
+                              <div class="columna">
+                                    <label for="rol"> Rol </label>
+
+                                    <select id="rol" required>
+                                          <option value="" disabled selected>Seleccionar rol</option>
+
+                                          <option value="manager">Manager</option>
+
+                                          <option value="empleado">Empleado</option>
+                                    </select>
+                              </div>
+                              <div class="columna">
+                                    <button type="submit">Registrar</button>
+                              </div>
+                        </div>
+                  </form>
+            </div>
+            <div class="fila">
+                  <div class="fila">
+                        <div class="columna">
+                              <h3>Lista de usuarios</h3>
+                        </div>
+                  </div>
+                  <div class="fila">
+                        <div class="columna">
+                              <label for="buscar_nombre"> Buscar por nombre</label>
+                              <input type="text" id="buscar_nombre" placeholder="Nombre del Empleado"
+                                    oninput="filtrar()" />
+                        </div>
+                        <div class="columna">
+                              <label for="buscar_empresa">Filtrar por empresa</label>
+                              <input type="text" id="buscar_empresa" placeholder="Nombre de empresa"
+                                    oninput="filtrar()" />
+                        </div>
+                        <div class="columna">
+                              <label for="buscar_nu">Numero de empelado</label>
+                              <input type="text" id="buscar_nu" placeholder="ej.0000012" oninput="filtrar()" />
+                        </div>
+                  </div>
+            </div>
+            <table>
+                  <thead>
+                        <tr>
+                              <th>ID</th>
+                              <th>Nombre</th>
+                              <th>Correo</th>
+                              <th>Rol</th>
+                              <th>Estado</th>
+                              <th>acciones</th>
+                        </tr>
+                  </thead>
+
+                  <tbody id="tablaUsuarios">
+                        <td colspan="6" class="mensajes">
+                              Usa los filtros para mostrar empleado de tu preferencia
+                        </td>
+
+                  </tbody>
+            </table>
+      </div>
+      </body>
+
+</html>

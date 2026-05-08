@@ -1,0 +1,105 @@
+body {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      background: #a550bb;
+      font-family: 'DM Sans', sans-serif;
+}
+
+
+#mensaje td {
+      text-align: center;
+      /* centrado horizontal */
+      font-size: 18px;
+      /* tamaño más grande */
+      font-weight: 500;
+      /* un poco más visible */
+      color: #666;
+      padding: 25%;
+      /* espacio para que respire */
+}
+
+th {
+      padding: 5px;
+      border: 1px solid #000000;
+      /* borde ligero */
+      text-align: left;
+      font-size: 20px;
+}
+
+td {
+      border: 1px solid #080808;
+      /* borde ligero */
+}
+
+select {
+      margin: 10px;
+}
+
+.fila {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+
+      align-items: center;
+      /* 👈 mejor alineación */
+      flex-wrap: wrap;
+      /* 👈 evita que se rompa en pantallas chicas */
+}
+
+input {
+      margin: 10px;
+}
+
+h3 {
+      margin: 10px;
+}
+
+button {
+      margin: 10px;
+}
+
+
+
+#alta_empresas {
+
+      width: 25%;
+      height: 200px;
+      background: #ffffff;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      margin: 5px;
+      /* 👈 clave */
+      top: 10px;
+      margin-top: 70px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+}
+
+#div_tabla_empresas {
+      overflow-x: auto;
+      margin: 5px;
+      width: 75%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      margin-top: 70px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+}
+
+@media (max-width: 768px) {
+      body {
+            flex-direction: column;
+      }
+
+      #div_tabla_empresas {
+            margin: 0px;
+            width: 100%;
+            padding: 0%;
+      }
+
+      #alta_empresas {
+            margin: 0px;
+            width: 100%;
+      }
+}

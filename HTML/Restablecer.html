@@ -3,167 +3,27 @@
 
 <head>
       <title>Restablecer contraseña</title>
+      <link rel="stylesheet" href="../CSS/restablecer.css">
 
-      <style>
-            * {
-                  margin: 0;
-                  padding: 0;
-                  box-sizing: border-box;
-                  font-family: 'DM Sans', sans-serif;
-            }
-
-            :root {
-                  --purple: #A550BB;
-                  --white: #fff;
-                  --border: #d1d5db;
-                  --error: #dc2626;
-                  --success: #16a34a;
-                  --gray: #6b7280;
-            }
-
-            body {
-                  background: #A550BB;
-                  min-height: 100vh;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-            }
-
-            .card {
-                  background: white;
-                  width: 400px;
-                  padding: 35px;
-                  box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
-            }
-
-            h1 {
-                  text-align: center;
-                  font-size: 24px;
-                  margin-bottom: 8px;
-                  color: #111827;
-            }
-
-            .subtitle {
-                  text-align: center;
-                  color: var(--gray);
-                  font-size: 14px;
-                  margin-bottom: 25px;
-            }
-
-            .field-group {
-                  margin-bottom: 18px;
-            }
-
-            label {
-                  display: block;
-                  margin-bottom: 8px;
-                  font-size: 14px;
-                  font-weight: 500;
-            }
-
-            .field {
-                  position: relative;
-            }
-
-            input {
-                  width: 100%;
-                  padding: 12px 40px 12px 12px;
-                  border: 1.5px solid var(--border);
-                  background: #f9fafb;
-                  font-size: 14px;
-                  outline: none;
-            }
-
-            input:focus {
-                  border-color: var(--purple);
-            }
-
-            .error {
-                  border-color: var(--error) !important;
-            }
-
-            .success {
-                  border-color: var(--success) !important;
-            }
-
-            .toggle {
-                  position: absolute;
-                  right: 10px;
-                  top: 50%;
-                  transform: translateY(-50%);
-                  border: none;
-                  background: none;
-                  cursor: pointer;
-            }
-
-            .error-text {
-                  font-size: 12px;
-                  color: var(--error);
-                  margin-top: 5px;
-                  display: none;
-            }
-
-            .requirements {
-                  border: 1px solid var(--border);
-                  padding: 12px;
-                  margin-bottom: 20px;
-                  background: #fafafa;
-            }
-
-            .requirements p {
-                  font-size: 13px;
-                  margin-bottom: 7px;
-                  color: var(--gray);
-            }
-
-            .ok {
-                  color: var(--success) !important;
-            }
-
-            .strength {
-                  margin: 12px 0;
-                  font-size: 13px;
-                  font-weight: 700;
-            }
-
-            button.main-btn {
-                  width: 100%;
-                  padding: 14px;
-                  border: none;
-                  background: #d1d5db;
-                  color: white;
-                  font-size: 15px;
-                  font-weight: 700;
-                  cursor: not-allowed;
-            }
-
-            button.main-btn.active {
-                  background: var(--purple);
-                  cursor: pointer;
-            }
-
-            button.main-btn.active:hover {
-                  opacity: .9;
-            }
-      </style>
 </head>
 
 <body>
 
-      <div class="card">
+      <div class="contenedor">
             <h1>Restablecer contraseña</h1>
 
-            <div class="field-group">
+            <div class="grupo">
                   <label>Nueva contraseña</label>
-                  <div class="field">
-                        <input id="newPass" type="password" oninput="validatePassword()">
+                  <div class="campo">
+                        <input id="newPass" type="password" oninput="validatePassword()"> <!--//checar el on input-->
                         <button class="toggle" onclick="toggle('newPass')">👁</button>
+                        <!--//"" "" onclick cambiar class-->
                   </div>
             </div>
 
-            <div class="strength" id="strengthText">Fortaleza: -</div>
+            <div class="fortaleza" id="strengthText">Fortaleza: -</div> <!--cambiar el nom del id-->
 
-            <div class="requirements">
+            <div class="requerimientos">
                   <p id="req1">• Mínimo 12 caracteres</p>
                   <p id="req2">• Incluye mayúsculas y minúsculas</p>
                   <p id="req3">• Incluye al menos 3 números</p>
@@ -173,11 +33,12 @@
                   <p id="req7">• No reutiliza últimas 3 contraseñas</p>
             </div>
 
-            <div class="field-group">
+            <div class="grupo">
                   <label>Confirmar contraseña</label>
-                  <div class="field">
+                  <div class="campo">
                         <input id="confirmPass" type="password" oninput="validatePassword()">
-                        <button class="toggle" onclick="toggle('confirmPass')">👁</button>
+                        <!--//cambiar nom id revisar oninput-->
+                        <button class="toggle" onclick="toggle('confirmPass')">👁</button> <!--//cambiar class-->
                   </div>
                   <p class="error-text" id="matchError">Las contraseñas no coinciden</p>
             </div>

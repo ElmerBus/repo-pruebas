@@ -1,0 +1,77 @@
+body {
+      margin: 0;
+      background-color: #A550BB;
+      font-family: 'DM Sans', sans-serif;
+}
+
+/* Barra superior */
+.barra {
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      height: 60px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .15);
+}
+
+/* Lado izquierdo */
+.ladoizquierdo {
+      display: flex;
+      align-items: center;
+      color: black;
+
+}
+
+.username h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 5px;
+      color: black;
+      padding-left: 20px;
+}
+
+.grupo {
+      padding-left: 90px;
+}
+
+.botones {
+      display: inline-block;
+      align-items: center;
+      padding: 15px;
+      margin: 10px;
+}
+
+.foto {
+      width: 50px;
+      height: 50px;
+      background-color: silver;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 45px;
+}
+
+
+.botones:hover {
+      text-decoration: underline;
+      cursor: pointer;
+
+}
+
+.username h3 {
+      text-align: left;
+      padding-right: 20px;
+}
+
+/* nombre con raya  */
+.username h3:hover {
+      text-decoration: underline;
+      cursor: pointer;
+}
+
+.campoError {
+      border-color: #d32f2f !important;
+
+}
