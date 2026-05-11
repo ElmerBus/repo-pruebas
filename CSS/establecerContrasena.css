@@ -1,0 +1,214 @@
+     
+        body{
+            background-color:#A550BB;
+            margin:0;
+            font-family:'Montserrat', sans-serif;
+           
+        }
+
+
+      
+.contenedor1{
+            background-color:white;
+            width:98.5%;
+            padding:10px;
+        }
+
+        .fondo1{
+            background-color:white;
+            width:100%;
+            display:flex;
+            flex-direction:row;
+        }
+
+        .fila{
+            display:flex;
+        }
+
+        .columna{
+            display:flex;
+            flex-direction:column;
+            width:100%;
+        }
+
+        /* SEGURIDAD */
+
+        .fondo2{
+            display:flex;
+            flex-direction:row;
+            background-color:white;
+            width:100%;
+        }
+
+        .fondo3{
+            display:flex;
+            justify-content:flex-end;
+            background-color:white;
+            width:100%;
+            padding:20px;
+            box-sizing:border-box;
+        }
+
+        .dato{
+            background-color:white;
+            width:100%;
+            margin:10px;
+        }
+
+        .info{
+            border:1px solid black;
+            height:50px;
+            width:95%;
+            margin:10px;
+            padding-left:10px;
+            display:flex;
+            align-items:center;
+        }
+
+        .espacio{
+            background-color:#A550BB;
+            height:30px;
+            width:100%;
+        }
+      .espacio2 {
+            background-color: #A550BB;
+            height: 100;
+            width: 100%;
+        }
+        /* INPUTS */
+
+        .grupoPass{
+            display:flex;
+            flex-direction:column;
+            width:100%;
+            margin:10px;
+        }
+
+        .campo{
+            position:relative;
+            width:95%;
+        }
+
+        input{
+            width:100%;
+            height:50px;
+	        padding-top:12px;
+			padding-right:45px;
+			padding-bottom:12px;
+			padding-left:12px;           
+            border:1px solid #d0d0dc;
+            font-size:16px;
+            
+        }
+
+      input::-ms-reveal,
+input::-ms-clear{
+    display:none;
+}
+
+input::-webkit-credentials-auto-fill-button{
+    visibility:hidden;
+    display:none;
+    pointer-events:none;
+}
+
+        .mostrarContraseña{
+            position:absolute;
+            right:10px;
+            top:13px;
+            border:none;
+            background:none;
+            cursor:pointer;
+            font-size:18px;
+        }
+
+        .error{
+            border-color:red !important;
+        }
+
+      
+        .error-text{
+            background-color:white;
+            color:red;
+            padding-left:20px;
+          margin: 0;
+            font-size:18px;
+            display:none;
+        }
+
+        .fortaleza{
+            background-color:white;
+            padding-left:20px;
+            padding-bottom:10px;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+        .botonguardar{
+            background-color:silver;
+            height:60px;
+            width:260px;
+            border:none;
+            font-size:20px;
+            font-weight:bold;
+            color:white;
+        }
+
+        .botonguardar.active{
+            background-color:#A550BB;
+            cursor:pointer;
+        }
+
+   @media (max-width: 800px) {
+      .barra {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+      }
+ }
+
+   @media (max-width: 800px) {
+      .contenedor1 {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 96%;
+      }
+ }
+
+    @media (max-width: 800px) {
+      .fondo1 {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+      }
+ }
+
+    @media (max-width: 800px) {
+      .fondo2 {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+      }
+ }
+
+    @media (max-width: 800px) {
+      .fondo3 {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+      }
+ }
+
+    @media (max-width: 800px) {
+      .dato {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 96%;
+      }
+ }

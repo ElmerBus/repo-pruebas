@@ -1,104 +1,8 @@
 <head>
     <title>Perfil</title>
     <link rel="stylesheet" href="../CSS/estiloBarra.css">
-    <style>
-        body {
-            background-color: #A550BB
-        }
+        <link rel="stylesheet" href="../CSS/establecerContrasena.css">
 
-        .abuelo {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .titulo {
-            background-color: #A550BB;
-            height: 100;
-            width: 100%;
-        }
-
-
-        .contenedor1 {
-            background-color: white;
-            height: 50;
-            width: 100%;
-        }
-
-        .fondo1 {
-            background-color: white;
-            height: 70;
-            width: 100%;
-            flex-direction: row;
-            display: flex;
-        }
-
-        .fila {
-            display: flex;
-        }
-
-
-
-        .columna {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-
-        }
-
-
-
-        .fondo2 {
-            display: flex;
-            flex-direction: row;
-            background-color: white;
-            height: 70;
-            width: 100%;
-        }
-
-
-
-        .fondo3 {
-            display: flex;
-            justify-content: flex-end;
-            background-color: white;
-            height: 70;
-            width: 100%;
-        }
-
-
-
-
-        .dato {
-            background-color: white;
-            height: 50;
-            width: 1200;
-            margin: 10px;
-        }
-
-
-        .info {
-          border: 1px solid black;
-            height: 50;
-            width: 1200;
-            margin: 10px;
-        }
-
-
-        .botonguardar {
-            background-color: silver;
-            height: 50;
-            width: 170;
-            margin: 10px;
-
-        }
-
-        .espacio {
-            background-color: #A550BB;
-            height: 50;
-            width: 100%;
-        }
-    </style>
-</head>
 
 
 <body>
@@ -125,9 +29,9 @@
                   <div class="botones">Cerrar Sesion</div>
             </div>
       </div>
-    <div class=abuelo>
-        <div class=titulo>
-            <h1>Perfil de usuario <h1>
+    
+         <div class=espacio2>
+
         </div>
 
 
@@ -174,7 +78,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 
 
 
@@ -184,35 +88,246 @@
 <div class=contenedor1><h2>Establecer nueva contraseña <h2></div>
 
 
+ <div class="fondo2">
+		
+		
+		
 
+            <!-- NUEVA -->
 
-<div class=fondo2>
-<div class=dato><h3>Nueva contraseña<h3></div>
-<div class=dato><h3>Confirmar nueva contraseña<h3></div>
+            <div class="grupoPass">
 
-</div>
+                <div class="dato">
+                    <h3>Nueva contraseña</h3>
+                </div>
 
+                <div class="campo">
 
-<div class=fondo2>
-<input 
-                type="text"
-                required
-                id="nombre"
-               
-              />
+                    <input 
+                        id="newPass"
+                        type="password"
+                        oninput="validarContraseña()"
+                    >
 
+                    <button 
+                        type="button"
+                        class="mostrarContraseña"
+                        onclick="mostrarContraseña('newPass')">
 
-<input 
-                type="text"
-                required
-                id="nombre"
-               
-              />
-</div>
+                        👁
 
-<div class=contenedor1><h3>las contraseñas no coinciden <h3></div>
-<div class=fondo3>
-<div class=botonguardar><h3>+ Guardar cambios<h3></div>
-</div>
-</div>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CONFIRMAR -->
+
+            <div class="grupoPass">
+
+                <div class="dato">
+                    <h3>Confirmar nueva contraseña</h3>
+                </div>
+
+                <div class="campo">
+
+                    <input 
+                        id="confirmPass"
+                        type="password"
+                        oninput="validarContraseña()"
+                    >
+
+                    <button 
+                        type="button"
+                        class="mostrarContraseña"
+                        onclick="mostrarContraseña('confirmPass')">
+
+                        👁
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FORTALEZA -->
+
+        <div class="fortaleza" id="strengthText">
+            Fortaleza: -
+        </div>
+
+        <!-- ERROR -->
+
+        <p class="error-text" id="matchError"></p>
+
+        <!-- BOTON -->
+
+        <div class="fondo3">
+
+            <button 
+                id="updateBtn"
+                class="botonguardar"
+                disabled
+                onclick="updatePassword()">
+
+                + Guardar cambios
+
+            </button>
+
+        </div>
+
+    </div>
+
+<script>
+
+    function mostrarContraseña(id){
+
+        const input =
+            document.getElementById(id);
+if(input.type === "password"){
+
+    input.type = "text";
+
+}else{
+
+    input.type = "password";
+
+}
+    }
+	
+	
+	
+
+    function ContraseñaSecuen(str){
+
+        return /123|234|345|456|567|678|789|abc|bcd|cde/i
+            .test(str);
+
+    }
+
+    function validarContraseña(){
+
+        const pass =document.getElementById("newPass").value;
+
+        const confirm =document.getElementById("confirmPass").value;
+
+        const error = document.getElementById("matchError");
+
+        const confirmInput =document.getElementById("confirmPass");
+
+        const btn = document.getElementById("updateBtn");
+
+        const r1 = pass.length >= 12;
+
+        const r2 =
+            /[A-Z]/.test(pass)
+            &&
+            /[a-z]/.test(pass);
+
+        const r3 =
+            (pass.match(/[0-9]/g) || []).length >= 3;
+
+        const r4 =
+            (pass.match(/[^A-Za-z0-9]/g) || []).length >= 3;
+
+        const r5 =
+            !ContraseñaSecuen(pass);
+
+        const r6 =
+            pass === confirm
+            &&
+            confirm !== "";
+
+        let score =
+            [r1,r2,r3,r4,r5,r6]
+            .filter(Boolean)
+            .length;
+
+        const strength =
+            document.getElementById("strengthText");
+
+        if(score <= 2){
+
+            strength.innerHTML =
+                "Fortaleza: Baja";
+
+        }else if(score <= 4){
+
+            strength.innerHTML =
+                "Fortaleza: Media";
+
+        }else{
+
+            strength.innerHTML =
+                "Fortaleza: Alta";
+        }
+
+        error.innerHTML = "";
+
+        error.style.display = "none";
+
+        confirmInput.classList.remove("error");
+
+        confirmInput.classList.remove("success");
+
+       let mensaje = "";
+
+if(confirm !== "" && pass !== confirm){
+    mensaje = "Las contraseñas no coinciden";
+
+}else if(!r1){
+    mensaje = "La contraseña debe tener mínimo 12 caracteres";
+
+}else if(!r2){
+    mensaje = "Debe incluir mayúsculas y minúsculas";
+
+}else if(!r3){
+    mensaje = "Debe incluir al menos 3 números";
+
+}else if(!r4){
+    mensaje = "Debe incluir al menos 3 caracteres especiales";
+
+}else if(!r5){
+    mensaje = "No se permiten caracteres secuenciales";
+
+}
+
+if(mensaje !== ""){
+    error.innerHTML = mensaje;
+    error.style.display = "block";
+    confirmInput.classList.add("error");
+
+}else{
+    error.style.display = "none";
+    confirmInput.classList.add("success");
+}
+
+        const valid =
+            r1 && r2 && r3 &&
+            r4 && r5 && r6;
+
+        btn.disabled = !valid;
+
+        btn.classList.toggle(
+            "active",
+            valid
+        );
+
+    }
+
+    function updatePassword(){
+
+        alert(
+            "Contraseña actualizada correctamente"
+			
+        );
+
+    }
+
+</script>
+
 </body>
+</html>
